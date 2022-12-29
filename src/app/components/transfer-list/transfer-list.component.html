@@ -1,0 +1,24 @@
+<div class="transfer-list-container">
+  <div class="source-box">
+
+    <label *ngFor="let item of leftItems; let i = index" class="checkbox-container"> {{item[label]}}
+      <input type="checkbox" [attr.checked]="item.selected ? '' : null" (change)="setSelectedLeft(i)">
+      <span class="checkmark"></span>
+    </label>
+
+  </div>
+  <div class="transfer-operator">
+    <div (click)="onTransfer(operator.RightAll)" [ngClass]="{'disabled': !leftItems.length}">&#x3e;&#x3e;</div>
+    <div (click)="onTransfer(operator.Right)" [ngClass]="{'disabled': !leftItems.length}">&#x3e;</div>
+    <div (click)="onTransfer(operator.Left)" [ngClass]="{'disabled': !rightItems.length}">&#x3c;</div>
+    <div (click)="onTransfer(operator.LeftAll)" [ngClass]="{'disabled': !rightItems.length}">&#x3c;&#x3c;</div>
+  </div>
+  <div class="target-box">
+
+    <label *ngFor="let item of rightItems; let i = index" class="checkbox-container"> {{item[label]}}
+      <input type="checkbox" [attr.checked]="item.selected ? '' : null" (change)="setSelectedRight(i)">
+      <span class="checkmark"></span>
+    </label>
+
+  </div>
+</div>
