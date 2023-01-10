@@ -1,2 +1,11 @@
-<transfer-list [leftItems]="items" [rightItems]="selectedItems" [value]="'id'" [label]="'name'"
-  (transfer)="onTransfer($event)"></transfer-list>
+transfer 1:
+<transfer-list [leftItems]="items1" [rightItems]="formValue.transfer1" [value]="'id'" [label]="'name'"
+  (transfer)="onTransfer($event, 'transfer1')">
+</transfer-list>
+
+transfer 2:
+<transfer-list [leftItems]="items2" [rightItems]="formValue.transfer2" [value]="'id'" [label]="'name'"
+  (transfer)="onTransfer($event, 'transfer2')" [isError]="transfer2Error">
+</transfer-list>
+
+<button (click)=" onSubmit()">click me</button>

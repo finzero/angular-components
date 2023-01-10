@@ -17,6 +17,7 @@ export class TransferListComponent {
   @Input() rightItems: any[] = [];
   @Input() label: string = 'label';
   @Input() value: string = 'id';
+  @Input() isError: boolean = false;
   @Output() transfer: EventEmitter<Array<any[]>> = new EventEmitter();
 
   operator = Operator;
